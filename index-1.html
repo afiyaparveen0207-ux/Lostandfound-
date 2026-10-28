@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Master - Online Quiz Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>&#127891; Quiz Master</h1>
+    <div class="best-badge" id="bestBadge">Best Score: --</div>
+  </header>
+
+  <main class="container">
+
+    <!-- Screen 1: Category selection -->
+    <section id="startScreen" class="card">
+      <h2>Select a Quiz Category</h2>
+      <p class="sub">Each quiz has 10 random questions and a 60 second timer.</p>
+      <div id="categoryList" class="category-grid"></div>
+    </section>
+
+    <!-- Screen 2: Quiz -->
+    <section id="quizScreen" class="card hidden">
+      <div class="quiz-head">
+        <span id="categoryName" class="tag"></span>
+        <span id="progressText">Question 1 / 10</span>
+        <span id="timer" class="timer">01:00</span>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <h3 id="questionText"></h3>
+      <div id="options" class="options"></div>
+      <div class="actions">
+        <button id="prevBtn" class="btn secondary">Previous</button>
+        <button id="nextBtn" class="btn">Next</button>
+        <button id="submitBtn" class="btn success hidden">Submit Quiz</button>
+      </div>
+    </section>
+
+    <!-- Screen 3: Result -->
+    <section id="resultScreen" class="card hidden">
+      <h2>Quiz Result</h2>
+      <div class="score-circle"><span id="percentText">0%</span></div>
+      <p id="scoreText" class="score-line"></p>
+      <p id="bestMsg" class="best-msg"></p>
+
+      <div class="summary">
+        <div class="stat"><b id="sTotal">0</b><span>Total Questions</span></div>
+        <div class="stat"><b id="sAttempted">0</b><span>Attempted</span></div>
+        <div class="stat good"><b id="sCorrect">0</b><span>Correct</span></div>
+        <div class="stat bad"><b id="sWrong">0</b><span>Incorrect</span></div>
+      </div>
+
+      <h3>Answer Review</h3>
+      <div id="review" class="review"></div>
+
+      <div class="actions center">
+        <button id="restartBtn" class="btn">Restart Quiz</button>
+        <button id="categoryBtn" class="btn secondary">Another Category</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
